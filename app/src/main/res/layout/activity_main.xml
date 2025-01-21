@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="14dp"
                     android:paddingVertical="3dp"
-                    android:text="黄历"
+                    android:text="多媒体"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="14dp"
                     android:paddingVertical="3dp"
-                    android:text="天气"
+                    android:text="常用"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="14dp"
                     android:paddingVertical="3dp"
-                    android:text="黄历"
+                    android:text="我的"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>

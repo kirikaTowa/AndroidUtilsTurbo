@@ -74,4 +74,5 @@ dependencies {
 
     //T2
     implementation (libs.github.xxpermissions)
+    implementation ("com.blankj:utilcodex:1.31.1")
 }
