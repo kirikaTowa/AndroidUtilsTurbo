@@ -2,10 +2,12 @@ package com.kakusummer.androidutilsturbo.action.music_service
 
 import android.app.Activity
 import android.content.Intent
+import android.database.Cursor
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +20,7 @@ import androidx.databinding.DataBindingUtil
 import com.kakusummer.androidutilsturbo.R
 import com.kakusummer.androidutilsturbo.databinding.ActivityMusicServiceBinding
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileOutputStream
 
 class MusicServiceActivity : AppCompatActivity() {
@@ -232,4 +235,66 @@ class MusicServiceActivity : AppCompatActivity() {
             null
         }
     }
+
+//            //1、BLANkj拷贝写法
+//            val inputFile = UriUtils.uri2File(uri)
+//            if (inputFile != null) {
+//                FileUtils.move(inputFile, ringtoneFile)
+//                ringtoneFile.absolutePath
+//            } else {
+//                Log.d("yeTest", "无法转换 URI 为文件")
+//                null
+//            }
+
+
+
+//    //传统方式copy，没太大区别，没权限的照样不行
+//    private fun copyUriToPrivateStorage(uri: Uri): String? {
+//        return try {
+//            // 获取原始文件的路径
+//            val sourceFile = File(getRealPathFromURI(uri))
+//
+//            // 确保源文件存在
+//            if (!sourceFile.exists()) {
+//                Log.d("yeTest", "源文件不存在")
+//                return null
+//            }
+//
+//            // 创建私有目录中的铃声文件
+//            val ringtoneDir = File(filesDir, "ringtones").apply { mkdirs() }
+//            val ringtoneFile = File(ringtoneDir, "selected_ringtone.mp3")
+//
+//            // 通过传统方式复制文件
+//            val input = FileInputStream(sourceFile)
+//            val output = FileOutputStream(ringtoneFile)
+//
+//            // 复制文件内容
+//            input.use { inputStream ->
+//                output.use { outputStream ->
+//                    inputStream.copyTo(outputStream)
+//                }
+//            }
+//
+//            ringtoneFile.absolutePath
+//        } catch (e: Exception) {
+//            Log.d("yeTest", "复制铃声文件失败: ${e.message}")
+//            null
+//        }
+//    }
+//
+//    // 获取Uri对应的文件路径
+//    private fun getRealPathFromURI(uri: Uri): String {
+//        var cursor: Cursor? = null
+//        try {
+//            val projection = arrayOf(MediaStore.Images.Media.DATA)
+//            cursor = contentResolver.query(uri, projection, null, null, null)
+//            if (cursor != null && cursor.moveToFirst()) {
+//                val columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+//                return cursor.getString(columnIndex)
+//            }
+//        } finally {
+//            cursor?.close()
+//        }
+//        throw IllegalArgumentException("Unable to get file path for Uri: $uri")
+//    }
 }

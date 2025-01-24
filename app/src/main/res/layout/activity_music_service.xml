@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="发动选取"
+            android:textSize="@dimen/dp_25"
             android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +28,7 @@
         <TextView
             android:id="@+id/tv_start"
             android:layout_width="wrap_content"
+            android:textSize="@dimen/dp_25"
             android:layout_height="wrap_content"
             android:text="启动Service"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="使用测试音乐"
+            android:textSize="@dimen/dp_25"
             android:layout_marginTop="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
