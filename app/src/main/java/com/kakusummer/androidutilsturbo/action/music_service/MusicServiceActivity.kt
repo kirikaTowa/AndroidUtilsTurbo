@@ -23,6 +23,8 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 
+
+//使用测试音乐时用Activity播放，点击start用service播放
 class MusicServiceActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMusicServiceBinding
 
@@ -144,6 +146,9 @@ class MusicServiceActivity : AppCompatActivity() {
                         getSharedPreferences("app_prefs", MODE_PRIVATE).edit()
                             .putString("private_ringtone_path", privatePath)
                             .apply()
+
+                        //这才是正确的文件链接，不然是空的
+                        //File(privatePath).toUri()
 
                         playRingtone(File(privatePath).toUri())
 
