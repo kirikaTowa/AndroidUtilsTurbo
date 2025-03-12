@@ -12,14 +12,13 @@ import com.kakusummer.androidutilsturbo.databinding.Fragment2Binding
 
 class Fragment2 : Fragment() {
 
-    private lateinit var binding: Fragment2Binding // 绑定类
+    private lateinit var binding: Fragment2Binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // 使用 DataBinding 进行绑定
         binding = Fragment2Binding.inflate(inflater, container, false)
         return binding.root
     }
